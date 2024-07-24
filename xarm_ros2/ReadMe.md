@@ -49,7 +49,7 @@
 
 - ### 3.1 Source Environment in every terminal
 ```bash
-source ~/ros2_ws/install/setup.bash
+source ~/xarm_ros/install/setup.bash
 ```
 
 - ### 3.2 Run robot in RViz
