@@ -15,18 +15,18 @@
 - ### 2.1 Create a workspace
     ```bash
     $ cd ~
-    $ mkdir -p ros2_ws/src
+    $ mkdir -p xarm_ros/src
     ```
 
 - ### 2.2 Obtain source code of "xarm_ros2" repository
     ```bash
-    $ cd ~/ros2_ws/src
-    $ git clone https://github.com/TeaTax16/xarm_ros2.git --recurse-submodules 
+    $ cd ~/xarm_ros/src
+    $ git clone https://github.com/TeaTax16/xarm_ros.git --recurse-submodules 
     ```
 
-- ### 2.3 Update "xarm_ros2" repository 
+- ### 2.3 Update "xarm_ros" repository 
     ```bash
-    $ cd ~/ros2_ws/src/xarm_ros2
+    $ cd ~/xarm_ros/src/xarm_ros2
     $ git pull
     $ git submodule sync
     $ git submodule update --init --remote
@@ -34,14 +34,14 @@
 
 - ### 2.4 Install dependencies
     ```bash
-    $ cd ~/ros2_ws/src/
+    $ cd ~/xarm_ros/src/
     $ rosdep update --include-eol-distros
     $ rosdep install --from-paths . --ignore-src --rosdistro $ROS_DISTRO -y
     ```
 
-- ### 2.5 Build xarm_ros2
+- ### 2.5 Build xarm_ros
     ```bash
-    $ cd ~/dev_ws/
+    $ cd ~/xarm_ros/
     $ colcon build
     ```
 
