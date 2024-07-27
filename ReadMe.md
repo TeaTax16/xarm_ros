@@ -1,14 +1,12 @@
-# xarm_ros2
+# xarm_ros
+#### This project works in conjuction with the [xarm_unity](https://github.com/TeaTax16/xarm_unity) GitHub Repo.
+#### Ensure the trees in both projects match with each other
 
 ## 1. Pre-requisites
 
 - ### 1.1 Install [ROS2 Foxy](https://docs.ros.org/en/ros2_documentation/foxy/Installation.html)
 
-- ### 1.2 Install [Moveit2](https://moveit.ros.org/install-moveit2/binary/)  
-
-- ### 1.3 Install [Gazebo](https://classic.gazebosim.org/tutorials?tut=install_ubuntu)  
-
-- ### 1.4 Install [gazebo_ros_pkgs](http://gazebosim.org/tutorials?tut=ros2_installing&cat=connect_ros)  
+- ### 1.2 Setup ROS-TCP-Connector following instructions from [xarm_unity](https://github.com/TeaTax16/xarm_unity)
 
 ## 2. Installation Instructions
 
@@ -47,28 +45,17 @@
 
 ## 3.  Use Instructions
 
-- ### 3.1 Source Environment in every terminal
+- ### 3.1 Start ROS 2 Side server
 ```bash
+cd ~/xarm_ros/
 source ~/xarm_ros/install/setup.bash
+ros2 run ros_tcp_endpoint default_server_point --ros-args -p ROS_IP:=<hostname -I>
 ```
+- ### 3.2 Connect Unity to Server following [Unity Hub Instructions](https://github.com/Unity-Technologies/Unity-Robotics-Hub/blob/main/tutorials/ros_unity_integration/setup.md#-unity-setup)
 
-- ### 3.2 Run robot in RViz
+- ### 3.3 Once connected, view the Pos and Rot data being sent
 ```bash
-ros2 launch xarm_moveit_servo xarm_moveit_servo_fake.launch.py dof:=6
-```
-
-- ### 3.3 Run keyboard interface
-```bash
-# Might have to move individual joints first
-ros2 run xarm_moveit_servo xarm_keyboard_input
-```
-
-- ### 3.4 Echo Twist Controls (for sanity check)
-```bash
-ros2 topic echo /servo_server/delta_twist_cmds
-```
-
-- ### 3.5 Run Custom Controller Scripts
-```bash
-ros2 run xarm_custom_controller move_(up/down/fw/bw/left/right)
+cd ~/xarm_ros/
+source ~/xarm_ros/install/setup.bash
+ros2 topic echo pos_rot
 ```
