@@ -11,18 +11,19 @@
 - ### 2.1 Create a Workspace
 ```bash
 $ cd
-$ mkdir -p xarm_ros/src
+$ mkdir -p xarm_ros
 ```
 - ### 2.2 Clone Source Code of this Repository
 ```bash
-$ cd ~/xarm_ros/src
-$ git clone https://github.com/TeaTax16/xarm_ros.git
+$ cd ~/xarm_ros
+$ git clone https://github.com/TeaTax16/xarm_ros.git src
 ```
-- ### 2.3 Install Dependencies
+- ### 2.3 Update xarm_sdk Submodule
 ```bash
-$ cd ~/xarm_ros/src
-$ rosdep update
-$ rosdep install --from-paths --ignore-src -r -y
+$ cd ~/xarm_ros/src/xarm_ros2
+$ git pull
+$ git submodule sync
+$ git submodule update --init --remote
 ```
 - ### 2.4 Build xarm_ros
 ```bash
