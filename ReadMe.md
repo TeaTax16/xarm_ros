@@ -18,9 +18,9 @@ source install/setup.bash
 
 - ### 3.2 Start ROS-TCP Connection Server
 ```bash
-ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=< IP Address >
+ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=<IP Address>
 ```
-#### Replace < IP Address > with ROS Machine IP found by running:
+#### Replace <IP Address> with ROS Machine IP found by running:
 ```bash
 hostname -I
 ```
@@ -29,6 +29,8 @@ hostname -I
 ```bash
 ros2 launch xarm_moveit_config xarm6_moveit_fake.launch.py 
 ```
+
+## ROS 2 Setup complete, continue setup from Unity-side repo
 
 
 
