@@ -39,7 +39,7 @@ $ cd ~/xarm_ros/
 $ source install/setup.bash
 ```
 
-- ### 3.2 Start ROS-TCP Connection Server
+- ### 3.2 Start ROS-TCP Connection Server (Terminal 1)
 ```bash
 $ ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=<IP Address>
 ```
@@ -48,10 +48,16 @@ $ ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=<IP Ad
 $ hostname -I
 ```
 
-- ### 3.3 Open Robot Control in MoveIt
+- ### 3.3 Open Robot Control in MoveIt (Terminal 2)
 ```bash
 $ ros2 launch xarm_moveit_config xarm6_moveit_fake.launch.py 
 ```
+
+- ### 3.4 Load Obstacles into Rviz scene
+  - Under `Scene Objects` press Import and navigate to:
+    `~/xarm_ros/src/xarm_ros2/xarm_moveit_config/`
+  - Select `obstacles.scene`
+
 
 ## ROS 2 Setup complete, continue setup from [Unity Repo](https://github.com/TeaTax16/xarm_unity)
 
